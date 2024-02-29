@@ -60,10 +60,13 @@ with our image ready in ECR, created the deployment files for EKS
   - Also, setup our node group to have sufficient nodes for our POD deployment. 
   - Setup IAM role for node group appropriate so that we can use Cloudwatch for logs - add this policy `CloudWatchAgentServerPolicy`
 
+After the deployments,
+used `kubectl get pods`, `kubectl get svc`, `kubectl describe pod <podname>`, `kubectl logs <podname> -c <containername>` to check and fix the few teething issues during inital deployments. 
+
 ### Stand Out Suggestions
-1.  Used t3.medium for AWS instance type - as it would cater to the requirements of this deployment. It provides good combination of memory resources and CPU
+1.  Used t3.medium for AWS instance type - as it would cater to the requirements of this deployment. It provides good combination of memory and CPU power required. 
 2.  For cost-saving, used desired and minimum number of nodes carefully so that the resources are just enough for the application to run without issues.
-3.  Monitoring the usage for controlling the costs and understand the usage of the app.
+3.  Monitoring the usage for controlling the costs and understand the usage of the app. Checking the logs of apps for any problems and troubleshooting. 
 
 
 
